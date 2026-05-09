@@ -149,7 +149,7 @@ export AIAAS_KEY=sk--...              # from portal.rcp.epfl.ch/aiaas/keys
 cd <repo>/tools/claude-code-aiaas && ./setup.sh && ./aiaas-claude.sh
 
 # 4. Smoke test — auto-resolves /data/Gemma-4-31B-it
-python starter_code/extract_residuals.py --model_key gemma4_31b --sample_limit 2
+python starter_code/extract_residuals.py --model_path /data/Gemma-4-31B-it --sample_limit 2
 ```
 
 **Compute**: A100-80GB primary, H200-141GB backup. Suggested target ~1 GPU-hour per Level-2 run (loose, not enforced). Models pre-staged at `/data/Gemma-4-31B-it` and `/data/Qwen3.6-27B`. All Python deps baked into the pod image — no `pip install` needed.

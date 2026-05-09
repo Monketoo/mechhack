@@ -78,7 +78,7 @@ The pod has a **read-only `/data/`** mount with both target models. Nothing to d
 Starter scripts auto-resolve `/data/<repo>` — no env vars, no `--model_path`. Smoke test:
 
 ```bash
-python starter_code/extract_residuals.py --model_key gemma4_31b --sample_limit 2
+python starter_code/extract_residuals.py --model_path /data/Gemma-4-31B-it --sample_limit 2
 ```
 
 The full resolver lookup order (first hit wins): `--model_path` flag → `$HACKATHON_MODELS_DIR/<repo>` → `/data/<repo>` → `<repo-root>/models/<repo>` → HF cache.

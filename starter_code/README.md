@@ -38,8 +38,8 @@ This is the *probe-shaped* starter path. If your Level-1 method is different (SA
 # Models are pre-staged at /data/{Gemma-4-31B-it,Qwen3.6-27B} (read-only).
 # See ../README.md "Setup" for AIaaS key + Claude Code.
 
-# 1. Extract residuals — auto-resolves /data/Gemma-4-31B-it
-python extract_residuals.py --model_key gemma4_31b --out_dir ./extracts/gemma4_31b
+# 1. Extract residuals — point at the RO model mount on the pod
+python extract_residuals.py --model_path /data/Gemma-4-31B-it --out_dir ./extracts/gemma4_31b
 
 # Other layer-spec options:
 #   --layers "middle"        single middle layer (default)
@@ -56,7 +56,7 @@ python train_probe.py \
 
 # 3. Reference attribution baseline
 python grad_input_baseline.py \
-    --model_key     gemma4_31b \
+    --model_path    /data/Gemma-4-31B-it \
     --probe_weights ./probes/weights/refusal_gemma4_31b_attention.pt \
     --extracts_dir  ./extracts/gemma4_31b \
     --out_dir       ./edit_eval
