@@ -96,8 +96,6 @@ Pr(model flipped | f flipped)  — behavior_flip_rate / probe_flip_rate
                                  (causal claim — same as concordance)
 ```
 
-High Pr(f|edit) but low Pr(model|edit)/Pr(model|f) ⇒ you gamed `f`. High everything ⇒ causal features. Both are publishable; reporting all three makes the difference visible.
-
 **Recommended target — Gemma 4-31B-it.** A 30-sample reproducibility study showed Gemma rerolls match the corpus at **100%** on the cluster and **93%** on AIaaS; Qwen drops to **60%** on AIaaS (likely silent fp8 quantization). For Level 2 to be evaluable by participants without dedicated GPU access, **focus on Gemma**. Qwen is fine for Level 1 (probe AUC) and a stretch target for Level 2.
 
 **Bonus** (worth tracking):
